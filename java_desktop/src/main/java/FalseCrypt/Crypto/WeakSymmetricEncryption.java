@@ -49,7 +49,7 @@ public class WeakSymmetricEncryption {
     	cos.write(secretMessage, 0, secretMessage.length);
     	cipherText = os.toByteArray();
     	// BUG 19: array with clear text content should be destroyed after a encryption. Comment below shows how.
-    	// Arrays.fill(byte, 0); // TODO which array? cipherText -> after written
+    	// Arrays.fill(cipherText, 0);
 
     	ret.write(payload);
     	ret.write(WeakCryptoConfig.IV);
