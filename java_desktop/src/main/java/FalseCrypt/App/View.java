@@ -187,7 +187,7 @@ public class View extends Composite {
 		if (keyData == null) {
 			// BUG 1: Key derivation should not be performed outside a foreach block that is using its return value.
 	        // Otherwise all operations in "encrypt directory" have the same encryption key
-			// TODO changed a little bit
+			// INFO changed a little bit, src C#
 			try {
 				keyData = WeakPasswordDerivation.DerivePassword(password);
 			} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
