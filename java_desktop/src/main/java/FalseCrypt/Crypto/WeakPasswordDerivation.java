@@ -36,7 +36,7 @@ public class WeakPasswordDerivation {
     	SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
     	// Bug 8: Iteration count is too low
         // Bug 9: Salt size is constant 8 bytes long and hence to short
-        // Bug 10: Not disposing IDisposable
+        // Bug 10: Not disposing IDisposable (Java: pbeKeySpec.clearPassword() here & secretKey.destroy() if no longer needed)
     	PBEKeySpec pbeKeySpec = new PBEKeySpec(password.toCharArray(), salt, WeakCryptoConfig.IterationCount, WeakCryptoConfig.KeySizeBytes * 8);
     	SecretKey secretKey = factory.generateSecret(pbeKeySpec);
     	byte[] key = new byte[WeakCryptoConfig.KeySizeBytes];
