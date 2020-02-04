@@ -11,7 +11,7 @@
 ### FalseCrypt.App.View
 |bug number|type|linenumber|line|description|
 |----------|----|----------|----|-----------|
-|01||[Line 186-211](https://github.com/jusito/FalseCrypt-1/blob/develop/java_desktop/src/main/java/FalseCrypt/App/View.java#L186-L211) |`keyData = WeakPasswordDerivation.DerivePassword(password);`|Key derivation should not be performed outside a foreach block that is using its return value. Otherwise all operations in "encrypt directory" have the same encryption key|
+|01||[Line 186-211](https://github.com/jusito/FalseCrypt-1/blob/develop/java_desktop/src/main/java/FalseCrypt/App/View.java#L186-L211) |`if (keyData == null) {` <br> `keyData = WeakPasswordDerivation.DerivePassword(password);` <br> `}` <br> `if (file.isDirectory())` <br> `for (File child : file.listFiles())` <br> `encrypt(child.getAbsolutePath(), password, keyData);`|Key derivation should not be performed outside a foreach block that is using its return value. Otherwise all operations in "encrypt directory" have the same encryption key|
 
 ### FalseCrypt.Crypto.WeakCryptoConfig
 |bug number|type|linenumber|line|description|
