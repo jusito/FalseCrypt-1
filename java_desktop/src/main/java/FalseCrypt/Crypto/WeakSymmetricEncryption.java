@@ -91,6 +91,7 @@ public class WeakSymmetricEncryption {
 //        		encryptedMessage, 
 //        		saltLength + iv.length, 
 //        		encryptedMessage.length - (saltLength + iv.length));
+        // Bug 22: Stream never closed
         final CipherInputStream cis = new CipherInputStream(is, des);
         
         byte[] buff = new byte[16];
