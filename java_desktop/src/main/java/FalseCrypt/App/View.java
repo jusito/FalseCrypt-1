@@ -198,6 +198,7 @@ public class View extends Composite {
 		
 		if (file.isDirectory()) {
 			for (File child : file.listFiles()) {
+				// BUG 1: DerivePassword here
 				encrypt(child.getAbsolutePath(), password, keyData);
 			}
 		} else /* file isn't directory */ {
