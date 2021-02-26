@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/GridLayout1"
-    android:layout_width="match_parent"
+    android:layout_width="175pt"
     android:layout_height="match_parent"
     android:columnCount="5"
     android:useDefaultMargins="true" >
@@ -42,8 +42,10 @@
 
     <Button
         android:id="@+id/browse"
-        android:layout_column="3"
+        android:layout_width="71dp"
+        android:layout_height="37dp"
         android:layout_row="2"
+        android:layout_column="3"
         android:onClick="onClick_Browse"
         android:text="Browse" />
 
@@ -59,7 +61,7 @@
         android:layout_row="3"
         android:layout_column="1"
         android:layout_columnSpan="2"
-        android:ems="10" />/>
+        android:ems="10" />
 
     <Button
         android:id="@+id/encrypt"
