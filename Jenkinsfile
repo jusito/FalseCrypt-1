@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('GradleBuild') {
             steps {
-                cd 'java_android'
-                sh './gradlew clean build'
+                sh './java_android/gradlew clean build'
             }
         }
     }
